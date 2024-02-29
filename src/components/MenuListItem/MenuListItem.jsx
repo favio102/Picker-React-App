@@ -11,7 +11,17 @@ export const MenuListItem = (props) => {
     setIsHover(false);
   }
 
-  console.log('is hovered ', isHovered);
+  function getBackgroundColor() {
+    if (isHovered) {
+      return 'blue';
+    } else {
+      return 'yellow'
+    }
+  }
 
-  return <div onMouseEnter={active} onMouseLeave={deactivate}>Set to: {props.difficulty}</div>;
+  return (
+    <div onMouseEnter={active} onMouseLeave={deactivate} style={{backgroundColor: getBackgroundColor()}}>
+      Set to: {props.difficulty}
+    </div>
+  );
 };
