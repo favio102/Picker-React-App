@@ -4,10 +4,10 @@ import { MenuListItem } from "../MenuListItem/MenuListItem";
 export function MenuList(props) {
   return (
     <div className={s.container}>
-      <MenuListItem difficulty='hard'/>
-      <MenuListItem difficulty='hard'/>
-      <MenuListItem difficulty='hard'/>
-      <MenuListItem difficulty='hard'/>
+      <MenuListItem onClick={props.onItemClick} difficulty='Easy'/>
+      <MenuListItem onClick={props.onItemClick} difficulty='Medium'/>
+      <MenuListItem onClick={props.onItemClick} difficulty='Hard'/>
+      <MenuListItem onClick={props.onItemClick} difficulty='Insane'/>
     </div>
   );
 }

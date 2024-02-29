@@ -20,8 +20,13 @@ export const MenuListItem = (props) => {
     }
   }
 
+  const onItemClick = () => {
+    props.onClick(props.difficulty)
+  }
+
   return (
     <div
+      onClick={onItemClick}
       onMouseEnter={active}
       onMouseLeave={deactivate}
       style={{ backgroundColor: getBackgroundColor() }}
