@@ -1,9 +1,15 @@
 import { DisplayDifficulty } from "./components/DisplayDifficulty/DisplayDifficulty";
-import { MenuListItem } from "./components/MenuListItem/MenuListItem";
+import { MenuList } from "./components/MenuList/MenuList";
+import s from "./style.module.css";
 
 export function App() {
-  return <div>
-    <MenuListItem difficulty="easy" />
-    <DisplayDifficulty difficulty="easy"/>
-  </div>;
+  return (
+    <div>
+      <h1>React difficulty</h1>
+      <div className={s.container}>
+        <MenuList difficulty="easy" />
+        <DisplayDifficulty difficulty="easy" />
+      </div>
+    </div>
+  );
 }
