@@ -4,33 +4,37 @@ import s from "./style.module.css";
 export const MenuListItem = (props) => {
   const [isHovered, setIsHover] = useState(false);
 
-  function active() {
+  const active = () => {
     setIsHover(true);
   }
 
-  function deactivate() {
+  const deactivate = () => {
     setIsHover(false);
   }
 
-  function getBackgroundColor() {
+  const getBackgroundColor = () => {
     if (isHovered) {
-      return "blue";
+      return "orange";
     } else {
-      return "yellow";
+      if (props.isSelected) {
+        return "orange";
+      } else {
+        return "blue";
+      }
     }
-  }
+  };
 
   const onItemClick = () => {
-    props.onClick(props.difficulty)
-  }
+    props.onClick(props.difficulty);
+  };
 
   return (
     <div
       onClick={onItemClick}
+      className={s.container}
       onMouseEnter={active}
       onMouseLeave={deactivate}
       style={{ backgroundColor: getBackgroundColor() }}
-      className={s.container}
     >
       Set to: {props.difficulty}
     </div>
