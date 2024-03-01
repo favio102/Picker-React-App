@@ -6,11 +6,11 @@ export const MenuListItem = (props) => {
 
   const active = () => {
     setIsHover(true);
-  }
+  };
 
   const deactivate = () => {
     setIsHover(false);
-  }
+  };
 
   const getBackgroundColor = () => {
     if (isHovered) {
